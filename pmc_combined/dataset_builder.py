@@ -70,7 +70,8 @@ def creat_time_series(dt_list, act_labels, trial_codes, mode="mag", labeled=True
     for sub_id in ds_list["code"]:
         for act_id, act in enumerate(act_labels):
             for trial in trial_codes[act_id]:
-                fname = 'A_DeviceMotion_data/'+act+'_'+str(trial)+'/sub_'+str(int(sub_id))+'.csv'
+                fname = '../data/A_DeviceMotion_data/'+act+'_'+str(trial)+'/sub_'+str(int(sub_id))+'.csv'
+                print(fname)
                 raw_data = pd.read_csv(fname)
                 raw_data = raw_data.drop(['Unnamed: 0'], axis=1)
                 vals = np.zeros((len(raw_data), num_data_cols))
